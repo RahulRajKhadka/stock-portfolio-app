@@ -16,17 +16,17 @@ interface StockVolumeColumnChartProps {
 
 export const StockVolumeColumnChart = ({ volumeHistory }: StockVolumeColumnChartProps) => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={volumeHistory} margin={{ top: 5, right: 20, left: 40, bottom: 5 }}>
-        <CartesianGrid stroke="#f5f5f5" />
-        <XAxis dataKey="timestamp" />
-        <YAxis />
+    <ResponsiveContainer width="100%" height={260}>
+      <BarChart data={volumeHistory} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
+        <CartesianGrid stroke="#f0f0f0" vertical={false} />
+        <XAxis dataKey="timestamp" tickLine={false} axisLine={false} />
+        <YAxis tickLine={false} axisLine={false} />
         <Tooltip />
-        <Bar dataKey="volumeTraded">
+        <Bar dataKey="volumeTraded" radius={[4, 4, 0, 0]}>
           {volumeHistory.map((dataPoint) => (
             <Cell
               key={dataPoint.timestamp}
-              fill={dataPoint.isGainDay ? "#2e7d32" : "#c62828"}
+              fill={dataPoint.isGainDay ? "#43a047" : "#e53935"}
             />
           ))}
         </Bar>
