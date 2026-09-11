@@ -7,7 +7,7 @@ export const AddEditStockPage = () => {
         Add / Edit Stock
       </Typography>
       <Typography color="text.secondary">
-        Form coming in the next step.
+     protflio
       </Typography>
     </Box>
   );
