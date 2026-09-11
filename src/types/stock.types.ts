@@ -6,7 +6,7 @@ export interface StockPricePoint {
 export interface StockVolumePoint {
   timestamp: string;
   volumeTraded: number;
-  gainLossPercentage: number;
+  isGainDay: boolean;
 }
 
 export interface StockSymbolInfo {

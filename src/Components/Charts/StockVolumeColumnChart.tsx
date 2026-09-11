@@ -8,33 +8,24 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import type { StockVolumePoint } from "../../types/stock.types";
 
-interface VolumeDataPoint {
-  day: string;
-  volume: number;
-  isGainDay: boolean;
+interface StockVolumeColumnChartProps {
+  volumeHistory: StockVolumePoint[];
 }
 
-const dummyVolumeHistory: VolumeDataPoint[] = [
-  { day: "Mon", volume: 4000, isGainDay: true },
-  { day: "Tue", volume: 6000, isGainDay: true },
-  { day: "Wed", volume: 3000, isGainDay: false },
-  { day: "Thu", volume: 8000, isGainDay: true },
-  { day: "Fri", volume: 2000, isGainDay: false },
-];
-
-export const StockVolumeColumnChart = () => {
+export const StockVolumeColumnChart = ({ volumeHistory }: StockVolumeColumnChartProps) => {
   return (
     <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={dummyVolumeHistory} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+      <BarChart data={volumeHistory} margin={{ top: 5, right: 20, left: 40, bottom: 5 }}>
         <CartesianGrid stroke="#f5f5f5" />
-        <XAxis dataKey="day" />
+        <XAxis dataKey="timestamp" />
         <YAxis />
         <Tooltip />
-        <Bar dataKey="volume">
-          {dummyVolumeHistory.map((dataPoint) => (
+        <Bar dataKey="volumeTraded">
+          {volumeHistory.map((dataPoint) => (
             <Cell
-              key={dataPoint.day}
+              key={dataPoint.timestamp}
               fill={dataPoint.isGainDay ? "#2e7d32" : "#c62828"}
             />
           ))}

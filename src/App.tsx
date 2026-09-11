@@ -1,18 +1,14 @@
-import { ChartCard } from "./Components/Charts/ChartCard";
-import { StockPriceLineChart } from "./Components/Charts/StockPriceLineChart";
-import { StockVolumeColumnChart } from "./Components/Charts/StockVolumeColumnChart";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { StockVisualizationPage } from "./Components/Charts/StockVisualizationPage";
 
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
-      <ChartCard title="Price trend">
-        <StockPriceLineChart />
-      </ChartCard>
-      <ChartCard title="Volume">
-        <StockVolumeColumnChart />
-      </ChartCard>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <StockVisualizationPage />
+    </QueryClientProvider>
   );
 }
 
