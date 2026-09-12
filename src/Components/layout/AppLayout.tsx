@@ -18,7 +18,6 @@ import {
   SIDEBAR_WIDTH,
 } from "./Sidebar";
 
-
 import { AddEditStockPage } from "../../pages/AddEditStockPage";
 import { StockVisualizationPage } from "../Charts/StockVisualizationPage";
 import { PortfolioPage } from "../../pages/Portfoliopage";

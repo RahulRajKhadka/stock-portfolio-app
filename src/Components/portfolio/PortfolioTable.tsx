@@ -5,28 +5,8 @@ import {
   createColumnHelper,
 } from "@tanstack/react-table";
 import { Table, TableHead, TableRow, TableCell, TableBody, Paper } from "@mui/material";
+import { usePortfolioStore } from "../../store/portfolioStore";
 import type { PortfolioStockItem } from "../../types/portfolio.types";
-
-const dummyPortfolioItems: PortfolioStockItem[] = [
-  {
-    id: "1",
-    tickerSymbol: "AAPL",
-    companyName: "Apple Inc.",
-    quantity: 10,
-    purchasePrice: 150,
-    currentPrice: 192,
-    purchaseDate: "2025-01-15",
-  },
-  {
-    id: "2",
-    tickerSymbol: "TSLA",
-    companyName: "Tesla Inc.",
-    quantity: 5,
-    purchasePrice: 220,
-    currentPrice: 250,
-    purchaseDate: "2025-03-10",
-  },
-];
 
 const columnHelper = createColumnHelper<PortfolioStockItem>();
 
@@ -42,11 +22,14 @@ const tableColumns = [
     header: "Current price",
     cell: (info) => `$${info.getValue().toFixed(2)}`,
   }),
+  columnHelper.accessor("purchaseDate", { header: "Purchase date" }),
 ];
 
 export const PortfolioTable = () => {
+  const portfolioItems = usePortfolioStore((state) => state.portfolioItems);
+
   const table = useReactTable({
-    data: dummyPortfolioItems,
+    data: portfolioItems,
     columns: tableColumns,
     getCoreRowModel: getCoreRowModel(),
   });
