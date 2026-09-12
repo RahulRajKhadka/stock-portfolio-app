@@ -3,7 +3,7 @@ import { PortfolioTable } from "../components/portfolio/PortfolioTable";
 
 export const PortfolioPage = () => {
   return (
-    <Box sx={{ paddingY: 3, paddingX: { xs: 2, sm: 4, md: 8 }, maxWidth: "1400px", marginX: "auto" }}>
+    <Box sx={{ padding: { xs: 2, sm: 3, md: 4 } }}>
       <Typography variant="h5" gutterBottom>
         My portfolio
       </Typography>
