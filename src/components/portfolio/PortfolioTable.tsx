@@ -39,7 +39,8 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { usePortfolioStore } from "../../store/portfolioStore";
 
 import type { PortfolioStockItem } from "../../types/portfolio.types";
-import { StockForm } from "./StockFom";
+import { StockForm } from "./StockForm";
+
 
 const columnHelper = createColumnHelper<PortfolioStockItem>();
 

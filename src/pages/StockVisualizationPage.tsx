@@ -6,11 +6,12 @@ import {
   Typography,
   CircularProgress,
 } from "@mui/material";
+import { useStockPerformanceData } from "../hooks/useStockPerformanceData";
+import { ChartCard } from "../components/charts/ChartCard";
+import { StockPriceLineChart } from "../components/charts/StockPriceLineChart";
+import { StockVolumeColumnChart } from "../components/charts/StockVolumeColumnChart";
 
-import { useStockPerformanceData } from "../../hooks/useStockPerformanceData";
-import { ChartCard } from "./ChartCard";
-import { StockPriceLineChart } from "./StockPriceLineChart";
-import { StockVolumeColumnChart } from "./StockVolumeColumnChart";
+
 
 const AVAILABLE_TICKER_SYMBOLS = ["AAPL", "TSLA", "MSFT"];
 

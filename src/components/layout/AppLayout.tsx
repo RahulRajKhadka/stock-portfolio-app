@@ -16,8 +16,10 @@ import {
   SIDEBAR_WIDTH_EXPANDED,
   SIDEBAR_WIDTH_COLLAPSED,
 } from "./Sidebar";
-import { StockVisualizationPage } from "../Charts/StockVisualizationPage";
-import { PortfolioPage } from "../../pages/Portfoliopage";
+
+import { PortfolioPage } from "../../pages/PortfolioPage";
+import { StockVisualizationPage } from "../../pages/StockVisualizationPage";
+
 
 
 export function AppLayout() {
